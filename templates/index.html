@@ -4,15 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- Font (if using Google Fonts or another hosted font) -->
+       <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <title>Password Strength Checker</title>
 
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
 </head>
 
 <body>
 
 <div class="container">
-
+    <img src="{{ url_for('static', filename='lock.png') }}" alt="Lock Icon" class="lock-icon">
     <h1>Password Strength Checker</h1>
 
     <p class="subtitle">
@@ -21,7 +28,7 @@
 
     <form method="POST">
 
-        <label for="password">Password</label>
+      
 
         <div class="password-box">
 
@@ -118,26 +125,66 @@
 
 </div>
 
+<section class="about">
+
+    <h2>About Me</h2>
+
+    <p>
+        Hi, I'm <strong>Abhinav Singh</strong>, an aspiring Cybersecurity student with a growing
+        interest in cybersecurity and web development. I enjoy building practical
+        applications that help me strengthen my programming skills while solving
+        real-world problems.
+    </p>
+
+    <p>
+        This Password Strength Detector is one of my learning projects, developed
+        using Python, Flask, HTML, and CSS. It evaluates password security by
+        checking password length, uppercase and lowercase letters, numbers, and
+        special characters, then provides a strength rating along with suggestions
+        for improvement.
+    </p>
+
+    <p>
+       CSE (Cybersecurity & Networking) [2024-2028] | 
+       Aspiring SOC Analyst Student | Skilled in Linux, 
+       Python, C, Splunk, Nmap, Metasploit | Powershell |
+       Front End Dev | Backened Flask | Passionate about 
+       threat detection,security operations 
+    </p>
+
+    <p class="contact-links">
+        Feel free to connect with me and explore more of my work.<br><br>
+
+          <a href="https://www.linkedin.com/in/abhinav-singh-63a16141a/" target="_blank">
+            LinkedIn
+        </a>
+
+        <a href="https://github.com/dragthenetwork-eng" target="_blank">
+            GitHub
+        </a>
+
+        |
+
+      
+    </p>
+</section>
+
 <script>
-
-function togglePassword(){
-
+function togglePassword() {
     const password = document.getElementById("password");
 
-    if(password.type === "password"){
+    if (password.type === "password") {
         password.type = "text";
-    }else{
+    } else {
         password.type = "password";
     }
-
 }
 
 const progress = document.getElementById("progress");
 
-if(progress){
+if (progress) {
     progress.style.width = "{{ progress }}%";
 }
-
 </script>
 
 </body>
